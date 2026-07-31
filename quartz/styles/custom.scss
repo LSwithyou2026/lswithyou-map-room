@@ -1039,7 +1039,10 @@ body[data-slug="index"] footer {
   height: 100dvh;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: auto minmax(0, 1fr) auto !important;
+  grid-auto-flow: row !important;
+  align-items: stretch;
   gap: clamp(1rem, 3vh, 2rem);
   padding: clamp(2rem, 6vh, 4.5rem) clamp(1.15rem, 8vw, 8rem) clamp(1.2rem, 3vh, 2rem);
   overflow: hidden;
@@ -1066,6 +1069,9 @@ body[data-slug="index"] .markdown-preview-view {
 
 .knowledge-welcome {
   position: relative;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: start;
   max-width: 72rem;
   width: 100%;
   margin: 0 auto;
@@ -1137,6 +1143,9 @@ body[data-slug="index"] .markdown-preview-view {
 }
 
 .knowledge-directory {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  align-self: stretch;
   width: 100%;
   max-width: 72rem;
   min-height: 0;
@@ -1202,6 +1211,9 @@ body[data-slug="index"] .markdown-preview-view {
 }
 
 .knowledge-mark {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+  align-self: end;
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
@@ -1222,6 +1234,77 @@ body[data-slug="index"] .markdown-preview-view {
   margin: 0;
   font-size: 0.52rem;
   letter-spacing: 0.16em;
+}
+
+.maritime-ornaments {
+  position: absolute;
+  z-index: 0;
+  right: 0.3rem;
+  bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(200, 158, 78, 0.52);
+  pointer-events: none;
+}
+
+.ornament-compass {
+  position: relative;
+  width: 2.7rem;
+  height: 2.7rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(205, 165, 86, 0.48);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 3px rgba(160, 115, 43, 0.08),
+    0 0 18px rgba(193, 145, 55, 0.08);
+}
+
+.ornament-compass::before,
+.ornament-compass::after {
+  content: "";
+  position: absolute;
+  background: rgba(205, 165, 86, 0.28);
+}
+
+.ornament-compass::before {
+  width: 1px;
+  height: 118%;
+}
+
+.ornament-compass::after {
+  width: 118%;
+  height: 1px;
+}
+
+.ornament-compass i {
+  position: absolute;
+  top: -0.38rem;
+  padding: 0 0.14rem;
+  color: #b68a40;
+  background: #070808;
+  font: normal 0.42rem/1 Georgia, serif;
+}
+
+.ornament-compass b {
+  color: #c79b4e;
+  font: normal 1.15rem/1 Georgia, serif;
+  transform: rotate(18deg);
+}
+
+.ornament-gear {
+  color: rgba(201, 159, 78, 0.48);
+  font-size: 2rem;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(193, 145, 55, 0.1);
+}
+
+.ornament-anchor {
+  color: #c69a4c;
+  font-size: 1.65rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 5px rgba(192, 143, 50, 0.18));
 }
 
 @media (max-width: 700px) {
@@ -1251,6 +1334,8 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
   .knowledge-directory {
+    width: 100% !important;
+    max-width: none;
     margin-top: 0;
   }
 
@@ -1278,6 +1363,31 @@ body[data-slug="index"] .markdown-preview-view {
     display: block;
     margin-top: 0.15rem;
     font-size: 0.56rem;
+  }
+
+  .maritime-ornaments {
+    top: 2.25rem;
+    right: 0.15rem;
+    bottom: auto;
+    gap: 0.42rem;
+    opacity: 0.78;
+  }
+
+  .ornament-compass {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .ornament-compass b {
+    font-size: 0.85rem;
+  }
+
+  .ornament-gear {
+    font-size: 1.45rem;
+  }
+
+  .ornament-anchor {
+    font-size: 1.2rem;
   }
 }
 

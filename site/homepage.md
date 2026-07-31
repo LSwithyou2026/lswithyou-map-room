@@ -10,6 +10,11 @@ description: "梁爽的第二大脑公开航海图"
       <span class="welcome-line">欢迎来到</span>
       <span class="brand-line">LSwithyou 海图室</span>
     </h1>
+    <div class="maritime-ornaments" aria-hidden="true">
+      <span class="ornament-compass"><i>N</i><b>✦</b></span>
+      <span class="ornament-gear">⚙</span>
+      <span class="ornament-anchor">⚓</span>
+    </div>
   </header>
 
   <nav class="knowledge-directory" aria-label="海图室目录">
