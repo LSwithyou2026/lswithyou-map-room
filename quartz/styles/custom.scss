@@ -140,7 +140,7 @@ body[data-slug="index"] footer {
 
 .map-hero {
   position: relative;
-  min-height: 96vh;
+  min-height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -195,9 +195,9 @@ body[data-slug="index"] footer {
 }
 
 .hero-copy {
-  width: min(38rem, 52vw);
+  width: min(44rem, 56vw);
   margin-left: clamp(2.5rem, 9vw, 10rem);
-  padding: 7rem 0 5rem;
+  padding: 4rem 0;
   color: var(--parchment);
 }
 
@@ -231,17 +231,69 @@ body[data-slug="index"] footer {
 .hero-copy h1 {
   margin: 0;
   color: #f1e5c8;
-  font-size: clamp(4rem, 8vw, 7.6rem);
-  line-height: 0.88;
-  letter-spacing: -0.04em;
+  font-size: clamp(3.5rem, 6.4vw, 6.6rem);
+  line-height: 0.95;
+  letter-spacing: 0.015em;
+  color: transparent;
+  background: linear-gradient(180deg, #fff4d2 0%, #d8b66e 42%, #8a672d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 0.3px rgba(255, 238, 190, 0.45);
   text-shadow: 0 3px 28px rgba(0,0,0,0.72);
 }
 
 .hero-subtitle {
-  margin: 1.7rem 0 0;
+  max-width: 35rem;
+  margin: 1.4rem 0 0;
   color: var(--parchment);
-  font-size: 1.05rem;
-  letter-spacing: 0.13em;
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: 0.07em;
+}
+
+.hero-directory {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.7rem;
+}
+
+.hero-directory a {
+  min-height: 5.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.8rem;
+  border: 1px solid var(--line-gold);
+  color: var(--parchment) !important;
+  background: linear-gradient(145deg, rgba(198,161,91,0.12), rgba(11,10,8,0.74));
+  backdrop-filter: blur(7px);
+}
+
+.hero-directory a:hover {
+  border-color: var(--antique-gold);
+  background: rgba(198,161,91,0.18);
+  transform: translateY(-2px);
+}
+
+.hero-directory span {
+  color: var(--deep-gold);
+  font: 0.58rem/1 Georgia, serif;
+  letter-spacing: 0.16em;
+}
+
+.hero-directory strong {
+  color: #d9b86f;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.hero-signature {
+  margin: 1.1rem 0 0;
+  color: rgba(231,220,194,0.6);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
 }
 
 .hero-rule {
@@ -414,7 +466,8 @@ body[data-slug="index"] footer {
 
 @media (max-width: 900px) {
   .map-hero {
-    min-height: 88vh;
+    min-height: 100svh;
+    height: 100svh;
     align-items: flex-end;
   }
 
@@ -431,15 +484,15 @@ body[data-slug="index"] footer {
   .hero-copy {
     width: 100%;
     margin: 0;
-    padding: 13rem 2.5rem 4.5rem;
+    padding: 38vh 2rem 2.2rem;
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.6rem, 15vw, 6rem);
+    font-size: clamp(2.8rem, 11vw, 5rem);
   }
 
-  .archive-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .hero-directory {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -449,22 +502,56 @@ body[data-slug="index"] footer {
   }
 
   .hero-copy {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 38vh 1rem max(1rem, env(safe-area-inset-bottom));
   }
 
   .captain-seal {
-    width: 4rem;
-    height: 4rem;
+    display: none;
+  }
+
+  .hero-kicker {
+    margin-bottom: 0.45rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
   }
 
   .hero-subtitle {
-    font-size: 0.88rem;
-    letter-spacing: 0.08em;
+    margin-top: 0.65rem;
+    font-size: 0.77rem;
+    line-height: 1.55;
+    letter-spacing: 0.035em;
   }
 
-  .hero-intro br {
-    display: none;
+  .hero-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.38rem;
+    margin-top: 0.85rem;
+  }
+
+  .hero-directory a {
+    min-height: 2.75rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    padding: 0.58rem 0.7rem;
+  }
+
+  .hero-directory a:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .hero-directory strong {
+    font-size: 0.78rem;
+  }
+
+  .hero-directory span {
+    font-size: 0.5rem;
+  }
+
+  .hero-signature {
+    margin-top: 0.65rem;
+    font-size: 0.55rem;
   }
 
   .hero-coordinate {
