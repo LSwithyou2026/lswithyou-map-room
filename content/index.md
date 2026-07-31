@@ -18,31 +18,36 @@ description: "梁爽的第二大脑公开航海图"
   </header>
 
   <nav class="knowledge-directory" aria-label="海图室目录">
-    <a href="./00-登舱指南🛋️/">
-      <span class="directory-number">00</span>
-      <span class="directory-name"><strong>登舱指南</strong><small>从这里认识海图室</small></span>
-      <span class="directory-arrow" aria-hidden="true">→</span>
-    </a>
-    <a href="./01-船员档案⚓️/">
-      <span class="directory-number">01</span>
-      <span class="directory-name"><strong>船员档案</strong><small>船员名册与甲板联谊</small></span>
-      <span class="directory-arrow" aria-hidden="true">→</span>
-    </a>
-    <a href="./02-解惑灯塔💡/">
-      <span class="directory-number">02</span>
-      <span class="directory-name"><strong>解惑灯塔</strong><small>问题、AI 与成长</small></span>
-      <span class="directory-arrow" aria-hidden="true">→</span>
-    </a>
-    <a href="./03-航海日志📓/">
-      <span class="directory-number">03</span>
-      <span class="directory-name"><strong>航海日志</strong><small>周报与甲板夜话</small></span>
-      <span class="directory-arrow" aria-hidden="true">→</span>
-    </a>
-    <a href="./04-航海补给🗺️/">
-      <span class="directory-number">04</span>
-      <span class="directory-name"><strong>航海补给</strong><small>认知、工具与收藏</small></span>
-      <span class="directory-arrow" aria-hidden="true">→</span>
-    </a>
+    <div class="archive-folder folder-00">
+      <span class="directory-number">NO. 00</span>
+      <span class="folder-stamp">LS<br>2026</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-name"><a href="./00-登舱指南🛋️/">登舱指南</a><small>从这里认识海图室</small></span>
+    </div>
+    <div class="archive-folder folder-01">
+      <span class="directory-number">NO. 01</span>
+      <span class="folder-stamp">CREW<br>FILE</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-name"><a href="./01-船员档案⚓️/">船员档案</a><small>船员名册与甲板联谊</small></span>
+    </div>
+    <div class="archive-folder folder-02">
+      <span class="directory-number">NO. 02</span>
+      <span class="folder-stamp">BEACON<br>LOG</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-name"><a href="./02-解惑灯塔💡/">解惑灯塔</a><small>问题、AI 与成长</small></span>
+    </div>
+    <div class="archive-folder folder-03">
+      <span class="directory-number">NO. 03</span>
+      <span class="folder-stamp">VOYAGE<br>03</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-name"><a href="./03-航海日志📓/">航海日志</a><small>周报与甲板夜话</small></span>
+    </div>
+    <div class="archive-folder folder-04">
+      <span class="directory-number">NO. 04</span>
+      <span class="folder-stamp">SUPPLY<br>ROOM</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-name"><a href="./04-航海补给🗺️/">航海补给</a><small>认知、工具与收藏</small></span>
+    </div>
   </nav>
 
   <footer class="knowledge-mark">

@@ -1409,3 +1409,220 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
 }
+
+/* Layered parchment archive folders */
+.knowledge-directory {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.35rem 0 0.15rem;
+  overflow: visible;
+}
+
+.archive-folder {
+  --folder-paper: #b89054;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: clamp(6.3rem, 15vh, 8.2rem);
+  flex: 0 1 clamp(6.3rem, 15vh, 8.2rem);
+  margin-top: clamp(-2.1rem, -3.5vh, -1.25rem);
+  padding: clamp(1.3rem, 3.5vh, 2rem) clamp(1rem, 4vw, 3rem) 1rem;
+  isolation: isolate;
+  clip-path: polygon(
+    0.4% 12%, 7% 11%, 7.8% 3%, 38% 2%, 43% 10%,
+    99.3% 11%, 100% 22%, 99.5% 58%, 100% 84%,
+    98.8% 99%, 80% 98.2%, 61% 100%, 37% 98.7%,
+    18% 100%, 0.7% 98%, 0% 78%, 0.6% 52%, 0% 31%
+  );
+  color: #26180d;
+  background:
+    radial-gradient(circle at 83% 68%, transparent 0 7%, rgba(54, 81, 74, 0.17) 7.5% 8.7%, transparent 9.2% 13%, rgba(42, 76, 72, 0.1) 13.5% 15%, transparent 16%),
+    radial-gradient(ellipse at 18% 88%, rgba(40, 75, 73, 0.2), transparent 23%),
+    repeating-linear-gradient(5deg, transparent 0 7px, rgba(57, 34, 14, 0.035) 8px, transparent 9px),
+    linear-gradient(112deg, rgba(255, 231, 174, 0.36), transparent 28%, rgba(68, 40, 17, 0.14) 77%),
+    var(--folder-paper);
+  border: 1px solid rgba(80, 47, 18, 0.7);
+  box-shadow:
+    0 -1px 0 rgba(255, 231, 176, 0.18),
+    0 9px 14px rgba(0, 0, 0, 0.5),
+    inset 0 0 28px rgba(63, 35, 13, 0.2);
+  transform-origin: 50% 100%;
+}
+
+.archive-folder:first-child {
+  margin-top: 0;
+}
+
+.folder-00 { --folder-paper: #c3a46c; z-index: 1; transform: rotate(-0.25deg); }
+.folder-01 { --folder-paper: #b89962; z-index: 2; transform: rotate(0.18deg); }
+.folder-02 { --folder-paper: #c2a066; z-index: 3; transform: rotate(-0.12deg); }
+.folder-03 { --folder-paper: #af8c58; z-index: 4; transform: rotate(0.2deg); }
+.folder-04 { --folder-paper: #c09b62; z-index: 5; transform: rotate(-0.08deg); }
+
+.archive-folder::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 6px 7px 5px;
+  border: 1px dashed rgba(78, 43, 16, 0.32);
+  clip-path: polygon(0 4%, 12% 1%, 27% 4%, 45% 0, 62% 3%, 79% 1%, 100% 5%, 98% 96%, 77% 99%, 57% 96%, 36% 100%, 15% 97%, 1% 100%);
+}
+
+.archive-folder::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.48;
+  background:
+    radial-gradient(circle at 4% 28%, #392415 0 1px, transparent 2px),
+    radial-gradient(circle at 97% 76%, #3b2617 0 1.5px, transparent 2.5px),
+    linear-gradient(90deg, rgba(66, 35, 13, 0.24), transparent 2.5%, transparent 96%, rgba(66, 35, 13, 0.3));
+  pointer-events: none;
+}
+
+.archive-folder .directory-number {
+  position: absolute;
+  top: 0.75rem;
+  left: clamp(1rem, 3.5vw, 2.5rem);
+  color: rgba(59, 34, 15, 0.72);
+  font: 600 0.56rem/1 Georgia, serif;
+  letter-spacing: 0.2em;
+}
+
+.archive-folder .directory-name {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: clamp(0.8rem, 3vw, 2rem);
+  text-align: right;
+}
+
+.archive-folder .directory-name a {
+  display: inline-block;
+  min-width: 7.5rem;
+  min-height: 0;
+  padding: 0.1rem 0 0.22rem;
+  border-bottom: 1px solid rgba(67, 37, 14, 0.38);
+  color: #2b190c !important;
+  background: none;
+  font: 700 clamp(1.05rem, 2.2vw, 1.45rem)/1.1 Georgia, "Songti SC", serif;
+  letter-spacing: 0.12em;
+  text-shadow:
+    0.35px 0 rgba(39, 21, 8, 0.58),
+    0 1px rgba(255, 229, 171, 0.22);
+}
+
+.archive-folder .directory-name a:hover,
+.archive-folder .directory-name a:focus-visible {
+  padding-left: 0.1rem;
+  color: #6d271d !important;
+  border-color: #7d3025;
+}
+
+.archive-folder .directory-name small {
+  color: rgba(52, 31, 14, 0.68);
+  font-size: clamp(0.6rem, 1.15vw, 0.74rem);
+  letter-spacing: 0.08em;
+}
+
+.folder-stamp {
+  position: absolute;
+  z-index: 2;
+  top: 1.05rem;
+  right: auto;
+  left: clamp(1rem, 4vw, 3rem);
+  width: 3.15rem;
+  height: 3.15rem;
+  display: grid;
+  place-items: center;
+  border: 2px double rgba(110, 41, 30, 0.58);
+  border-radius: 50%;
+  color: rgba(111, 37, 28, 0.64);
+  font: 600 0.48rem/1.15 Georgia, serif;
+  letter-spacing: 0.06em;
+  text-align: center;
+  transform: rotate(-11deg);
+  mix-blend-mode: multiply;
+}
+
+.folder-watermark {
+  position: absolute;
+  right: 18%;
+  bottom: -1.1rem;
+  width: 7rem;
+  height: 3.2rem;
+  border: 2px solid rgba(36, 85, 83, 0.13);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+  box-shadow: 0 0 0 5px rgba(39, 82, 80, 0.035);
+}
+
+@media (max-width: 700px) {
+  .knowledge-directory {
+    justify-content: flex-start;
+    padding-top: 0.35rem;
+  }
+
+  .archive-folder {
+    min-height: clamp(5.8rem, 14.3vh, 7rem);
+    flex-basis: clamp(5.8rem, 14.3vh, 7rem);
+    margin-top: clamp(-1.65rem, -3vh, -1.05rem);
+    padding: 1.7rem 0.9rem 0.6rem;
+  }
+
+  .archive-folder .directory-number {
+    top: 0.68rem;
+    left: 0.9rem;
+    font-size: 0.48rem;
+  }
+
+  .archive-folder .directory-name {
+    display: block;
+    padding-right: 0;
+    padding-left: 3.5rem;
+    text-align: right;
+  }
+
+  .archive-folder .directory-name a {
+    min-width: 0;
+    font-size: clamp(1rem, 4.7vw, 1.22rem);
+  }
+
+  .archive-folder .directory-name small {
+    display: block;
+    margin-top: 0.22rem;
+    font-size: 0.54rem;
+  }
+
+  .folder-stamp {
+    top: 1.2rem;
+    right: auto;
+    left: 0.85rem;
+    width: 2.65rem;
+    height: 2.65rem;
+    font-size: 0.4rem;
+  }
+
+  .folder-watermark {
+    right: 12%;
+    bottom: -1.25rem;
+  }
+}
+
+@media (max-height: 650px) {
+  .archive-folder {
+    min-height: 5.15rem;
+    flex-basis: 5.15rem;
+    margin-top: -1.25rem;
+    padding-top: 1.45rem;
+  }
+
+  .archive-folder .directory-name small {
+    display: none;
+  }
+}
