@@ -1,3 +1,504 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+:root {
+  --ink: #0b0a08;
+  --ink-soft: #13110d;
+  --parchment: #e7dcc2;
+  --parchment-muted: #b9aa89;
+  --antique-gold: #c6a15b;
+  --deep-gold: #7e6335;
+  --line-gold: rgba(198, 161, 91, 0.38);
+  --wood: #241a10;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(111, 83, 39, 0.1), transparent 34rem),
+    repeating-linear-gradient(92deg, rgba(255,255,255,0.008) 0 1px, transparent 1px 5px),
+    var(--ink);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  z-index: 20;
+  background-image:
+    radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+a {
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.page-title a {
+  font-family: Georgia, "Songti SC", serif;
+  letter-spacing: 0.08em;
+  color: var(--antique-gold);
+}
+
+.page-title a::before {
+  content: "✦";
+  display: inline-block;
+  margin-right: 0.45rem;
+  font-size: 0.7em;
+}
+
+.left.sidebar,
+.right.sidebar {
+  background: rgba(11, 10, 8, 0.82);
+  backdrop-filter: blur(12px);
+}
+
+.explorer button,
+.toc button {
+  color: var(--parchment);
+}
+
+.explorer-content ul li a {
+  border-left: 1px solid transparent;
+  padding-left: 0.45rem;
+}
+
+.explorer-content ul li a:hover {
+  color: var(--antique-gold);
+  border-left-color: var(--antique-gold);
+}
+
+.search-button {
+  border: 1px solid var(--line-gold) !important;
+  border-radius: 2px !important;
+  background: rgba(198, 161, 91, 0.05) !important;
+}
+
+.article-title,
+h1, h2, h3 {
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  letter-spacing: 0.035em;
+}
+
+.article-title {
+  color: var(--parchment);
+}
+
+.article-title::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  margin-top: 0.65rem;
+  border-bottom: 1px solid var(--antique-gold);
+}
+
+blockquote {
+  background: rgba(198, 161, 91, 0.05);
+  border-color: var(--antique-gold);
+}
+
+footer {
+  border-top: 1px solid var(--line-gold);
+  color: var(--parchment-muted);
+}
+
+body[data-slug="index"] #quartz-body {
+  display: block;
+}
+
+body[data-slug="index"] .left.sidebar,
+body[data-slug="index"] .right.sidebar,
+body[data-slug="index"] .article-title,
+body[data-slug="index"] .content-meta,
+body[data-slug="index"] .note-properties,
+body[data-slug="index"] .page-header,
+body[data-slug="index"] .page-footer,
+body[data-slug="index"] .center > hr {
+  display: none !important;
+}
+
+body[data-slug="index"] .page,
+body[data-slug="index"] #quartz-body,
+body[data-slug="index"] .center,
+body[data-slug="index"] article {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+body[data-slug="index"] footer {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.map-hero {
+  position: relative;
+  min-height: 96vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  border-bottom: 1px solid var(--line-gold);
+  background: #080706;
+}
+
+.hero-portrait,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-portrait {
+  z-index: -3;
+  background-image: url("./static/lswithyou-portrait.jpg");
+  background-size: cover;
+  background-position: 62% 48%;
+  filter: sepia(0.42) saturate(0.72) contrast(1.12) brightness(0.58);
+  transform: scale(1.015);
+}
+
+.hero-shade {
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(7,6,4,0.98) 0%, rgba(10,8,5,0.92) 28%, rgba(10,8,5,0.48) 58%, rgba(7,6,4,0.22) 76%, rgba(7,6,4,0.68) 100%),
+    linear-gradient(0deg, rgba(7,6,4,0.92), transparent 45%, rgba(7,6,4,0.42));
+}
+
+.map-hero::before {
+  content: "";
+  position: absolute;
+  inset: 1.2rem;
+  border: 1px solid var(--line-gold);
+  pointer-events: none;
+}
+
+.map-hero::after {
+  content: "";
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  right: -10rem;
+  bottom: -13rem;
+  border: 1px solid rgba(198,161,91,0.16);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2.5rem rgba(198,161,91,0.035),
+    0 0 0 5rem rgba(198,161,91,0.025),
+    0 0 0 7.5rem rgba(198,161,91,0.018);
+}
+
+.hero-copy {
+  width: min(38rem, 52vw);
+  margin-left: clamp(2.5rem, 9vw, 10rem);
+  padding: 7rem 0 5rem;
+  color: var(--parchment);
+}
+
+.captain-seal {
+  width: 5rem;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.8rem;
+  border: 1px solid var(--antique-gold);
+  border-radius: 50%;
+  color: var(--antique-gold);
+  box-shadow: inset 0 0 0 4px var(--ink), inset 0 0 0 5px var(--deep-gold);
+  font: 700 1.2rem/1 Georgia, serif;
+  letter-spacing: 0.12em;
+  transform: rotate(-5deg);
+}
+
+.captain-seal span {
+  transform: rotate(5deg);
+}
+
+.hero-kicker,
+.section-eyebrow {
+  margin: 0 0 1rem;
+  color: var(--antique-gold);
+  font: 600 0.7rem/1.5 Georgia, serif;
+  letter-spacing: 0.24em;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  color: #f1e5c8;
+  font-size: clamp(4rem, 8vw, 7.6rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-shadow: 0 3px 28px rgba(0,0,0,0.72);
+}
+
+.hero-subtitle {
+  margin: 1.7rem 0 0;
+  color: var(--parchment);
+  font-size: 1.05rem;
+  letter-spacing: 0.13em;
+}
+
+.hero-rule {
+  width: min(25rem, 80%);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.6rem 0;
+  color: var(--antique-gold);
+}
+
+.hero-rule::before,
+.hero-rule::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--line-gold);
+}
+
+.hero-intro {
+  color: var(--parchment-muted);
+  line-height: 2;
+}
+
+.enter-archive {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--antique-gold);
+  color: var(--parchment) !important;
+  background: rgba(198,161,91,0.06);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+}
+
+.enter-archive:hover {
+  background: var(--antique-gold);
+  color: var(--ink) !important;
+  transform: translateY(-2px);
+}
+
+.hero-coordinate {
+  position: absolute;
+  right: 2.2rem;
+  bottom: 2rem;
+  color: rgba(231,220,194,0.58);
+  font: 0.64rem/1 Georgia, serif;
+  letter-spacing: 0.2em;
+}
+
+.archive-intro {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.archive-intro h2,
+.captain-note h2 {
+  margin: 0.2rem 0 1rem;
+  color: var(--parchment);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.archive-intro > p:last-child {
+  max-width: 38rem;
+  margin: 0 auto;
+  color: var(--parchment-muted);
+  line-height: 2;
+}
+
+.archive-grid {
+  max-width: 78rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+.archive-card {
+  min-height: 15rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  overflow: hidden;
+  color: var(--parchment) !important;
+  border: 1px solid var(--line-gold);
+  background:
+    linear-gradient(145deg, rgba(198,161,91,0.075), transparent 48%),
+    repeating-linear-gradient(100deg, rgba(255,255,255,0.008) 0 1px, transparent 1px 4px),
+    #12100c;
+}
+
+.archive-card::after {
+  content: "";
+  position: absolute;
+  inset: 0.7rem;
+  border: 1px solid rgba(198,161,91,0.08);
+  pointer-events: none;
+}
+
+.archive-card:hover {
+  border-color: var(--antique-gold);
+  background-color: #18140d;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.36);
+}
+
+.file-number {
+  color: var(--antique-gold);
+  font: 0.62rem/1 Georgia, serif;
+  letter-spacing: 0.2em;
+}
+
+.file-icon {
+  margin: auto 0 0.8rem;
+  color: var(--antique-gold);
+  font-size: 2rem;
+}
+
+.archive-card strong {
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+}
+
+.archive-card small {
+  margin-top: 0.5rem;
+  color: var(--parchment-muted);
+}
+
+.archive-card i {
+  margin-top: 1.25rem;
+  color: var(--deep-gold);
+  font: normal 0.6rem/1 Georgia, serif;
+  letter-spacing: 0.18em;
+}
+
+.captain-note {
+  max-width: 68rem;
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 0 auto 8rem;
+  padding: 4rem;
+  border-top: 1px solid var(--line-gold);
+  border-bottom: 1px solid var(--line-gold);
+}
+
+.note-monogram {
+  width: 8rem;
+  height: 8rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--antique-gold);
+  border-radius: 50%;
+  color: var(--antique-gold);
+  box-shadow: inset 0 0 0 7px var(--ink), inset 0 0 0 8px var(--deep-gold);
+  font: 700 2rem/1 Georgia, serif;
+  letter-spacing: 0.12em;
+}
+
+.captain-note p:last-child {
+  color: var(--parchment-muted);
+  line-height: 2;
+}
+
+@media (max-width: 900px) {
+  .map-hero {
+    min-height: 88vh;
+    align-items: flex-end;
+  }
+
+  .hero-portrait {
+    background-position: 67% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(0deg, rgba(7,6,4,0.99) 0%, rgba(7,6,4,0.86) 42%, rgba(7,6,4,0.18) 80%),
+      linear-gradient(90deg, rgba(7,6,4,0.78), transparent);
+  }
+
+  .hero-copy {
+    width: 100%;
+    margin: 0;
+    padding: 13rem 2.5rem 4.5rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.6rem, 15vw, 6rem);
+  }
+
+  .archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .map-hero::before {
+    inset: 0.65rem;
+  }
+
+  .hero-copy {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .captain-seal {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-intro br {
+    display: none;
+  }
+
+  .hero-coordinate {
+    display: none;
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 5rem;
+  }
+
+  .archive-intro {
+    padding-top: 5rem;
+  }
+
+  .captain-note {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 0 1rem 5rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .note-monogram {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

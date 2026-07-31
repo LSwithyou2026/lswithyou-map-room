@@ -33,23 +33,7 @@ while IFS= read -r -d '' folder; do
   fi
 done < <(find "$staging_dir" -mindepth 1 -type d -print0)
 
-{
-  printf '%s\n' '---'
-  printf '%s\n' 'title: "LSwithyou 海图室🚢"'
-  printf '%s\n' 'description: "梁爽的第二大脑公开航海图"'
-  printf '%s\n\n' '---'
-  printf '%s\n\n' '# 欢迎来到 LSwithyou 海图室 🚢'
-  printf '%s\n\n' '这里是一间持续生长的公开知识库。'
-  printf '%s\n\n' '> [!note] 建设进度'
-  printf '%s\n\n' '> 海图室目前正在搭建框架。新的内容会持续补充，公开链接保持不变。'
-  printf '%s\n\n' '## 从这里开始'
-  find "$staging_dir" -mindepth 1 -maxdepth 1 -type d -print |
-    LC_ALL=C sort |
-    while IFS= read -r folder; do
-      folder_name="$(basename "$folder")"
-      printf -- '- [[%s/index|%s]]\n' "$folder_name" "$folder_name"
-    done
-} > "$staging_dir/index.md"
+cp "$site_dir/site/homepage.md" "$staging_dir/index.md"
 
 rsync -a --delete "$staging_dir/" "$site_dir/content/"
 
