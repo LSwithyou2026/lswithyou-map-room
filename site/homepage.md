@@ -7,8 +7,8 @@ description: "梁爽的第二大脑公开航海图"
   <header class="knowledge-welcome">
     <p class="knowledge-eyebrow">LSWITHYOU · MARITIME KNOWLEDGE ARCHIVE</p>
     <h1>
-      <span class="welcome-line">欢迎来到</span>
-      <span class="brand-line">LSwithyou 海图室</span>
+      <span class="welcome-line">各位船员，欢迎来到：</span>
+      <span class="brand-line">LSwithyou*海图室</span>
     </h1>
     <div class="maritime-ornaments" aria-hidden="true">
       <span class="ornament-compass"><i>N</i><b>✦</b></span>
