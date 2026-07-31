@@ -1093,19 +1093,40 @@ body[data-slug="index"] .markdown-preview-view {
 
 .knowledge-welcome h1 {
   margin: 0;
-  color: #f0eadf;
-  font-size: clamp(2rem, 5vw, 4.6rem);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: 0.035em;
+  line-height: 1;
 }
 
-.knowledge-welcome h1 span {
+.knowledge-welcome h1 .welcome-line,
+.knowledge-welcome h1 .brand-line {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+}
+
+.knowledge-welcome h1 .welcome-line {
+  margin-bottom: 0.28em;
+  color: #eee8dc;
+  font-size: clamp(1.45rem, 3.2vw, 2.6rem);
+  letter-spacing: 0.11em;
+  text-shadow: 0 2px 18px rgba(255, 241, 210, 0.06);
+}
+
+.knowledge-welcome h1 .brand-line {
+  position: relative;
+  white-space: nowrap;
   color: transparent;
-  background: linear-gradient(105deg, #8c642b 0%, #f4dc9c 38%, #b7873d 67%, #f0d48a 100%);
+  background:
+    linear-gradient(180deg, #fff0bd 0%, #d8ad57 38%, #8a6024 62%, #e0be72 83%, #fff0bd 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  text-shadow: 0 0 24px rgba(193, 145, 55, 0.08);
+  font-size: clamp(2rem, 5vw, 4.6rem);
+  letter-spacing: 0.025em;
+  filter: drop-shadow(0 3px 9px rgba(170, 119, 34, 0.18));
+}
+
+.knowledge-welcome h1 > a {
+  display: none !important;
 }
 
 .knowledge-intro {
@@ -1184,10 +1205,12 @@ body[data-slug="index"] .markdown-preview-view {
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
+  padding: 0 !important;
   display: flex;
   align-items: center;
   gap: 0.6rem;
   color: rgba(209, 178, 112, 0.45);
+  line-height: 1;
 }
 
 .knowledge-mark span {
@@ -1214,7 +1237,17 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
   .knowledge-welcome h1 {
-    font-size: clamp(1.85rem, 9.2vw, 3rem);
+    width: 100%;
+  }
+
+  .knowledge-welcome h1 .welcome-line {
+    margin-bottom: 0.22em;
+    font-size: clamp(1.25rem, 5.7vw, 1.7rem);
+  }
+
+  .knowledge-welcome h1 .brand-line {
+    font-size: clamp(1.7rem, 8vw, 2.45rem);
+    letter-spacing: 0.005em;
   }
 
   .knowledge-directory {
