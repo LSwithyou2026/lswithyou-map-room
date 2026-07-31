@@ -7,7 +7,6 @@ description: "梁爽的第二大脑公开航海图"
   <header class="knowledge-welcome">
     <p class="knowledge-eyebrow">LSWITHYOU · MARITIME KNOWLEDGE ARCHIVE</p>
     <h1>欢迎来到<br><span>LSwithyou 海图室</span></h1>
-    <p class="knowledge-intro">沿着知识的航线，查看梁爽持续记录的思考、成长与发现。</p>
   </header>
 
   <nav class="knowledge-directory" aria-label="海图室目录">
