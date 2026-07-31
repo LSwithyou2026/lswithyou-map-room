@@ -3,63 +3,43 @@ title: "LSwithyou 海图室🚢"
 description: "梁爽的第二大脑公开航海图"
 ---
 
-<main class="desk-scene">
-  <section class="captains-desktop" aria-label="船长的复古书桌">
-    <div class="desk-title">
-      <p>THE LSWITHYOU MARITIME ARCHIVE · EST. 2026</p>
-      <h1>LSwithyou 海图室</h1>
-      <span>梁爽的第二大脑</span>
-    </div>
+<main class="knowledge-home">
+  <header class="knowledge-welcome">
+    <p class="knowledge-eyebrow">LSWITHYOU · MARITIME KNOWLEDGE ARCHIVE</p>
+    <h1>欢迎来到<br><span>LSwithyou 海图室</span></h1>
+    <p class="knowledge-intro">沿着知识的航线，查看梁爽持续记录的思考、成长与发现。</p>
+  </header>
 
-    <div class="old-map" aria-hidden="true">
-      <i></i><b></b>
-    </div>
-
-    <div class="brass-compass" aria-hidden="true">
-      <span>N</span><i></i>
-    </div>
-
-    <div class="portrait-mirror" role="img" aria-label="镜框中的梁爽">
-      <div class="mirror-photo"></div>
-      <div class="mirror-glass"></div>
-      <span class="mirror-plaque">梁爽 · LSwithyou</span>
-    </div>
-
-    <div class="desk-lamp" aria-hidden="true">
-      <i></i><b></b><span></span>
-    </div>
-  </section>
-
-  <nav class="drawer-cabinet" aria-label="海图室五个目录抽屉">
-    <a class="archive-drawer" href="./00-登舱指南🛋️/">
-      <span class="drawer-number">00</span>
-      <span class="drawer-copy"><strong>登舱指南</strong><small>进度更新 · 意见反馈</small></span>
-      <i class="drawer-handle" aria-hidden="true"></i>
-      <em>OPEN</em>
+  <nav class="knowledge-directory" aria-label="海图室目录">
+    <a href="./00-登舱指南🛋️/">
+      <span class="directory-number">00</span>
+      <span class="directory-name"><strong>登舱指南</strong><small>从这里认识海图室</small></span>
+      <span class="directory-arrow" aria-hidden="true">→</span>
     </a>
-    <a class="archive-drawer" href="./01-船员档案⚓️/">
-      <span class="drawer-number">01</span>
-      <span class="drawer-copy"><strong>船员档案</strong><small>船员名册 · 甲板联谊</small></span>
-      <i class="drawer-handle" aria-hidden="true"></i>
-      <em>OPEN</em>
+    <a href="./01-船员档案⚓️/">
+      <span class="directory-number">01</span>
+      <span class="directory-name"><strong>船员档案</strong><small>船员名册与甲板联谊</small></span>
+      <span class="directory-arrow" aria-hidden="true">→</span>
     </a>
-    <a class="archive-drawer" href="./02-解惑灯塔💡/">
-      <span class="drawer-number">02</span>
-      <span class="drawer-copy"><strong>解惑灯塔</strong><small>待解答问题 · AI · 成长</small></span>
-      <i class="drawer-handle" aria-hidden="true"></i>
-      <em>OPEN</em>
+    <a href="./02-解惑灯塔💡/">
+      <span class="directory-number">02</span>
+      <span class="directory-name"><strong>解惑灯塔</strong><small>问题、AI 与成长</small></span>
+      <span class="directory-arrow" aria-hidden="true">→</span>
     </a>
-    <a class="archive-drawer" href="./03-航海日志📓/">
-      <span class="drawer-number">03</span>
-      <span class="drawer-copy"><strong>航海日志</strong><small>航海周报 · 甲板夜话</small></span>
-      <i class="drawer-handle" aria-hidden="true"></i>
-      <em>OPEN</em>
+    <a href="./03-航海日志📓/">
+      <span class="directory-number">03</span>
+      <span class="directory-name"><strong>航海日志</strong><small>周报与甲板夜话</small></span>
+      <span class="directory-arrow" aria-hidden="true">→</span>
     </a>
-    <a class="archive-drawer" href="./04-航海补给🗺️/">
-      <span class="drawer-number">04</span>
-      <span class="drawer-copy"><strong>航海补给</strong><small>认知成长 · AI 支配</small></span>
-      <i class="drawer-handle" aria-hidden="true"></i>
-      <em>OPEN</em>
+    <a href="./04-航海补给🗺️/">
+      <span class="directory-number">04</span>
+      <span class="directory-name"><strong>航海补给</strong><small>认知、工具与收藏</small></span>
+      <span class="directory-arrow" aria-hidden="true">→</span>
     </a>
   </nav>
+
+  <footer class="knowledge-mark">
+    <span>⚓</span>
+    <p>梁爽的第二大脑 · 持续更新中</p>
+  </footer>
 </main>

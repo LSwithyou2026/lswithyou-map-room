@@ -1031,3 +1031,228 @@ body[data-slug="index"] footer {
     display: none;
   }
 }
+
+/* Calm maritime knowledge-base homepage */
+.knowledge-home {
+  width: 100%;
+  min-height: 100svh;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: clamp(1rem, 3vh, 2rem);
+  padding: clamp(2rem, 6vh, 4.5rem) clamp(1.15rem, 8vw, 8rem) clamp(1.2rem, 3vh, 2rem);
+  overflow: hidden;
+  color: #e8e1d2;
+  background:
+    radial-gradient(circle at 50% -15%, rgba(181, 137, 62, 0.12), transparent 35%),
+    linear-gradient(180deg, #080909 0%, #030404 100%);
+  font-family: Georgia, "Songti SC", "STSong", serif;
+}
+
+.knowledge-welcome {
+  position: relative;
+  max-width: 72rem;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: clamp(1rem, 2.5vh, 1.8rem);
+  border-bottom: 1px solid rgba(199, 158, 78, 0.34);
+}
+
+.knowledge-welcome::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: min(9rem, 32vw);
+  height: 1px;
+  background: linear-gradient(90deg, #f2d48e, #9b6d29, transparent);
+  box-shadow: 0 0 10px rgba(224, 180, 91, 0.45);
+}
+
+.knowledge-eyebrow {
+  margin: 0 0 0.65rem;
+  color: #a88649;
+  font-size: clamp(0.48rem, 1vw, 0.62rem);
+  letter-spacing: 0.22em;
+}
+
+.knowledge-welcome h1 {
+  margin: 0;
+  color: #f0eadf;
+  font-size: clamp(2rem, 5vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0.035em;
+}
+
+.knowledge-welcome h1 span {
+  color: transparent;
+  background: linear-gradient(105deg, #8c642b 0%, #f4dc9c 38%, #b7873d 67%, #f0d48a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 24px rgba(193, 145, 55, 0.08);
+}
+
+.knowledge-intro {
+  margin: 0.75rem 0 0;
+  color: rgba(232, 225, 210, 0.58);
+  font-size: clamp(0.72rem, 1.4vw, 0.9rem);
+  letter-spacing: 0.08em;
+}
+
+.knowledge-directory {
+  width: 100%;
+  max-width: 72rem;
+  min-height: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.knowledge-directory a {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) 2rem;
+  align-items: center;
+  padding: 0.45rem clamp(0.4rem, 1.5vw, 1rem);
+  border-bottom: 1px solid rgba(199, 158, 78, 0.18);
+  color: #e8e1d2 !important;
+  background: linear-gradient(90deg, rgba(196, 151, 68, 0.045), transparent 45%);
+  transition: border-color 180ms ease, background 180ms ease, padding 180ms ease;
+}
+
+.knowledge-directory a:first-child {
+  border-top: 1px solid rgba(199, 158, 78, 0.18);
+}
+
+.knowledge-directory a:hover,
+.knowledge-directory a:focus-visible {
+  padding-left: 1.35rem;
+  border-color: rgba(232, 189, 103, 0.62);
+  background: linear-gradient(90deg, rgba(196, 151, 68, 0.15), rgba(196, 151, 68, 0.025) 65%, transparent);
+}
+
+.directory-number {
+  color: #8d6b36;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+}
+
+.directory-name {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.8rem, 3vw, 2.5rem);
+}
+
+.directory-name strong {
+  min-width: 7.5rem;
+  color: #d7b76f;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+.directory-name small {
+  color: rgba(232, 225, 210, 0.48);
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: clamp(0.62rem, 1.2vw, 0.76rem);
+  letter-spacing: 0.08em;
+}
+
+.directory-arrow {
+  justify-self: end;
+  color: #a77d39;
+  font-size: 1rem;
+}
+
+.knowledge-mark {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(209, 178, 112, 0.45);
+}
+
+.knowledge-mark span {
+  color: #9a7437;
+  font-size: 0.78rem;
+}
+
+.knowledge-mark p {
+  margin: 0;
+  font-size: 0.52rem;
+  letter-spacing: 0.16em;
+}
+
+@media (max-width: 700px) {
+  .knowledge-home {
+    gap: 0.9rem;
+    min-height: 100svh;
+    padding: max(1.6rem, env(safe-area-inset-top)) 1rem max(0.9rem, env(safe-area-inset-bottom));
+  }
+
+  .knowledge-welcome {
+    padding-bottom: 1rem;
+  }
+
+  .knowledge-welcome h1 {
+    font-size: clamp(1.85rem, 9.2vw, 3rem);
+  }
+
+  .knowledge-intro {
+    max-width: 21rem;
+    margin-top: 0.55rem;
+    font-size: 0.68rem;
+    line-height: 1.55;
+  }
+
+  .knowledge-directory a {
+    grid-template-columns: 2.35rem minmax(0, 1fr) 1.3rem;
+    padding: 0.35rem 0.25rem;
+  }
+
+  .knowledge-directory a:hover,
+  .knowledge-directory a:focus-visible {
+    padding-left: 0.65rem;
+  }
+
+  .directory-name {
+    display: block;
+  }
+
+  .directory-name strong {
+    display: block;
+    min-width: 0;
+    font-size: clamp(0.98rem, 4.8vw, 1.2rem);
+  }
+
+  .directory-name small {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.56rem;
+  }
+}
+
+@media (max-height: 620px) {
+  .knowledge-home {
+    gap: 0.55rem;
+    padding-top: 1rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .knowledge-eyebrow,
+  .knowledge-mark,
+  .directory-name small {
+    display: none;
+  }
+
+  .knowledge-welcome {
+    padding-bottom: 0.6rem;
+  }
+
+  .knowledge-intro {
+    margin-top: 0.35rem;
+  }
+}
