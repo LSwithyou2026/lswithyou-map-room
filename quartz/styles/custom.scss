@@ -589,3 +589,445 @@ body[data-slug="index"] footer {
     transition: none !important;
   }
 }
+
+/* Captain's desk homepage */
+.desk-scene {
+  width: 100%;
+  height: 100svh;
+  min-height: 40rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 30% 70%;
+  color: var(--parchment);
+  background: #090705;
+}
+
+.captains-desktop {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 9px solid #0b0805;
+  background:
+    radial-gradient(ellipse at 75% 30%, rgba(220,173,86,0.13), transparent 24%),
+    linear-gradient(90deg, rgba(0,0,0,0.5), transparent 42%, rgba(0,0,0,0.36)),
+    repeating-linear-gradient(92deg, transparent 0 22px, rgba(255,255,255,0.014) 23px, transparent 25px),
+    linear-gradient(176deg, #4a2b15 0%, #2f190c 46%, #1b0e07 100%);
+  box-shadow: inset 0 -18px 30px rgba(0,0,0,0.72);
+}
+
+.captains-desktop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.58) 100%),
+    repeating-linear-gradient(3deg, transparent 0 4px, rgba(255,220,160,0.012) 5px);
+}
+
+.desk-title {
+  position: absolute;
+  z-index: 3;
+  left: clamp(1rem, 7vw, 7rem);
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 42%;
+}
+
+.desk-title p {
+  margin: 0 0 0.4rem;
+  color: var(--antique-gold);
+  font: 600 0.58rem/1.4 Georgia, serif;
+  letter-spacing: 0.18em;
+}
+
+.desk-title h1 {
+  margin: 0;
+  color: transparent;
+  background: linear-gradient(180deg, #fff0bf 0%, #d6ac5b 42%, #7a5523 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: clamp(2rem, 4.2vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: 0.015em;
+  text-shadow: 0 4px 28px rgba(0,0,0,0.52);
+}
+
+.desk-title span {
+  display: block;
+  margin-top: 0.6rem;
+  color: rgba(231,220,194,0.72);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+.portrait-mirror {
+  position: absolute;
+  z-index: 4;
+  width: clamp(8rem, 14vw, 13rem);
+  height: calc(100% - 1.5rem);
+  top: 0.75rem;
+  right: clamp(3.5rem, 16vw, 18rem);
+  overflow: hidden;
+  border: 7px ridge #9c7338;
+  border-radius: 48% 48% 14px 14px;
+  background: #15100b;
+  box-shadow:
+    0 11px 24px rgba(0,0,0,0.68),
+    0 0 0 3px #24150a,
+    0 0 0 4px #b88a43;
+}
+
+.mirror-photo,
+.mirror-glass {
+  position: absolute;
+  inset: 0;
+}
+
+.mirror-photo {
+  background: url("./static/lswithyou-portrait.jpg") 64% 42% / cover no-repeat;
+  filter: sepia(0.32) saturate(0.8) contrast(1.08) brightness(0.64);
+}
+
+.mirror-glass {
+  background:
+    linear-gradient(115deg, rgba(255,255,255,0.16), transparent 24%, transparent 62%, rgba(255,230,180,0.06)),
+    linear-gradient(0deg, rgba(32,16,7,0.46), transparent 48%);
+  box-shadow: inset 0 0 24px rgba(0,0,0,0.62);
+}
+
+.mirror-plaque {
+  position: absolute;
+  left: 50%;
+  bottom: 0.35rem;
+  transform: translateX(-50%);
+  width: max-content;
+  padding: 0.16rem 0.45rem;
+  border: 1px solid #8d672f;
+  color: #e0c27f;
+  background: rgba(20,12,6,0.84);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.old-map {
+  position: absolute;
+  z-index: 2;
+  width: 19%;
+  height: 47%;
+  left: 47%;
+  bottom: 6%;
+  transform: rotate(-5deg);
+  border: 1px solid #7c5d31;
+  background:
+    radial-gradient(circle at 68% 37%, transparent 0 14%, rgba(95,63,26,0.32) 15% 16%, transparent 17%),
+    repeating-linear-gradient(12deg, transparent 0 12px, rgba(86,57,25,0.12) 13px),
+    #a88755;
+  box-shadow: 0 7px 14px rgba(0,0,0,0.46), inset 0 0 25px rgba(63,35,12,0.55);
+}
+
+.old-map i,
+.old-map b {
+  position: absolute;
+  display: block;
+  border: 1px dashed rgba(65,40,17,0.48);
+  border-radius: 50%;
+}
+
+.old-map i {
+  width: 38%;
+  height: 52%;
+  left: 12%;
+  top: 18%;
+}
+
+.old-map b {
+  width: 20%;
+  height: 28%;
+  right: 10%;
+  bottom: 14%;
+}
+
+.brass-compass {
+  position: absolute;
+  z-index: 5;
+  width: clamp(3rem, 5.5vw, 5.2rem);
+  aspect-ratio: 1;
+  right: clamp(0.8rem, 7vw, 7rem);
+  bottom: 9%;
+  display: grid;
+  place-items: center;
+  border: 5px ridge #a97b34;
+  border-radius: 50%;
+  color: #d1a95d;
+  background: radial-gradient(circle, #2b1b0d 0 52%, #87622c 54% 60%, #211208 62%);
+  box-shadow: 0 9px 18px rgba(0,0,0,0.56);
+}
+
+.brass-compass span {
+  position: absolute;
+  top: 7%;
+  font: 0.45rem/1 Georgia, serif;
+}
+
+.brass-compass i {
+  width: 3px;
+  height: 58%;
+  display: block;
+  transform: rotate(28deg);
+  background: linear-gradient(#d4b06a 0 50%, #6d2c1c 50%);
+  clip-path: polygon(50% 0, 100% 48%, 65% 48%, 65% 100%, 35% 100%, 35% 48%, 0 48%);
+}
+
+.desk-lamp {
+  position: absolute;
+  z-index: 4;
+  left: 1.2%;
+  bottom: 3%;
+  width: 7rem;
+  height: 90%;
+  opacity: 0.72;
+}
+
+.desk-lamp i {
+  position: absolute;
+  width: 2px;
+  height: 58%;
+  left: 50%;
+  bottom: 16%;
+  background: #9c743d;
+}
+
+.desk-lamp b {
+  position: absolute;
+  width: 4.8rem;
+  height: 43%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  border: 2px solid #8b642e;
+  border-radius: 50% 50% 22% 22%;
+  background: radial-gradient(circle at center bottom, rgba(255,210,120,0.34), rgba(81,45,18,0.88));
+  box-shadow: 0 0 34px rgba(216,151,61,0.18);
+}
+
+.desk-lamp span {
+  position: absolute;
+  width: 4rem;
+  height: 0.5rem;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #8b642e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.64);
+}
+
+.drawer-cabinet {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: 3px;
+  padding: 5px clamp(0.4rem, 3vw, 2.5rem) 7px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 28px),
+    #0f0905;
+}
+
+.archive-drawer {
+  position: relative;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 3.4rem minmax(10rem, 1fr) 7rem 3rem;
+  align-items: center;
+  padding: 0.4rem clamp(1rem, 3.2vw, 3rem);
+  overflow: hidden;
+  border: 1px solid #6f4721;
+  color: var(--parchment) !important;
+  background:
+    linear-gradient(90deg, rgba(255,214,143,0.055), transparent 13%, transparent 80%, rgba(0,0,0,0.32)),
+    repeating-linear-gradient(1deg, transparent 0 7px, rgba(255,230,180,0.014) 8px, transparent 9px),
+    linear-gradient(180deg, #4a2913, #2c160b 48%, #1c0e07);
+  box-shadow:
+    inset 0 4px 7px rgba(255,203,118,0.055),
+    inset 0 -8px 12px rgba(0,0,0,0.58),
+    0 4px 9px rgba(0,0,0,0.7);
+}
+
+.archive-drawer::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(174,123,56,0.22);
+  pointer-events: none;
+}
+
+.archive-drawer:hover,
+.archive-drawer:focus-visible {
+  z-index: 3;
+  transform: translateY(-2px) scale(1.004);
+  border-color: #c49a52;
+  background-color: #4d2d17;
+  box-shadow:
+    inset 0 4px 8px rgba(255,218,155,0.08),
+    inset 0 -8px 13px rgba(0,0,0,0.5),
+    0 12px 23px rgba(0,0,0,0.78);
+}
+
+.drawer-number {
+  color: #9a7135;
+  font: 0.62rem/1 Georgia, serif;
+  letter-spacing: 0.18em;
+}
+
+.drawer-copy {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+}
+
+.drawer-copy strong {
+  min-width: 7rem;
+  color: transparent;
+  background: linear-gradient(180deg, #f5ddb0, #b1833d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(1.05rem, 2vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.drawer-copy small {
+  color: rgba(231,220,194,0.57);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+.drawer-handle {
+  position: relative;
+  width: 5.4rem;
+  height: 1.8rem;
+  justify-self: center;
+  border: 3px ridge #9a7033;
+  border-radius: 50% 50% 35% 35%;
+  background: linear-gradient(#b78a46, #4e3318);
+  box-shadow: inset 0 0 0 3px #211208, 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.drawer-handle::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 0.65rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -42%);
+  border-radius: 50%;
+  background: #17100a;
+  box-shadow: inset 0 1px 2px #050302;
+}
+
+.archive-drawer em {
+  color: #80602f;
+  font: normal 0.5rem/1 Georgia, serif;
+  letter-spacing: 0.16em;
+}
+
+@media (max-width: 700px) {
+  .desk-scene {
+    min-height: 38rem;
+  }
+
+  .desk-title {
+    left: 1rem;
+    top: 49%;
+    max-width: 54%;
+  }
+
+  .desk-title p {
+    font-size: 0.43rem;
+    letter-spacing: 0.11em;
+  }
+
+  .desk-title h1 {
+    font-size: clamp(1.35rem, 7vw, 2.2rem);
+  }
+
+  .desk-title span {
+    margin-top: 0.35rem;
+    font-size: 0.52rem;
+  }
+
+  .portrait-mirror {
+    width: 29%;
+    height: calc(100% - 1.1rem);
+    top: 0.55rem;
+    right: 8%;
+    border-width: 5px;
+  }
+
+  .mirror-photo {
+    background-position: 65% 42%;
+  }
+
+  .old-map {
+    width: 25%;
+    height: 34%;
+    left: 45%;
+    bottom: 4%;
+  }
+
+  .brass-compass {
+    width: 2.8rem;
+    right: 1rem;
+  }
+
+  .desk-lamp {
+    display: none;
+  }
+
+  .drawer-cabinet {
+    gap: 2px;
+    padding: 3px 4px 5px;
+  }
+
+  .archive-drawer {
+    grid-template-columns: 2rem minmax(0, 1fr) 4.1rem;
+    padding: 0.28rem 0.65rem;
+  }
+
+  .drawer-copy {
+    display: block;
+  }
+
+  .drawer-copy strong {
+    display: block;
+    min-width: 0;
+    font-size: clamp(0.92rem, 4.4vw, 1.15rem);
+  }
+
+  .drawer-copy small {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.55rem;
+  }
+
+  .drawer-handle {
+    width: 3.5rem;
+    height: 1.3rem;
+  }
+
+  .archive-drawer em {
+    display: none;
+  }
+}
+
+@media (max-height: 680px) {
+  .desk-scene {
+    min-height: 34rem;
+  }
+
+  .drawer-copy small,
+  .mirror-plaque {
+    display: none;
+  }
+}
