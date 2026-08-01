@@ -19,22 +19,33 @@ description: "梁爽的第二大脑公开航海图"
 
   <nav class="knowledge-directory" aria-label="海图室目录">
     <div class="archive-folder folder-00">
-      <span class="directory-number">NO. 00</span><span class="folder-stamp">LS<br>2026</span><span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-number">NO. 00</span>
+      <span class="folder-stamp">LS<br>2026</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
       <span class="directory-name"><a href="./00-登舱指南🛋️/">登舱指南</a><small>从这里认识海图室</small></span>
     </div>
     <div class="archive-folder folder-01">
-      <span class="directory-number">NO. 01</span><span class="folder-stamp">CREW<br>FILE</span><span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-number">NO. 01</span>
+      <span class="folder-stamp">CREW<br>FILE</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
       <span class="directory-name"><a href="./01-船员档案⚓️/">船员档案</a><small>船员名册与甲板联谊</small></span>
     </div>
     <div class="archive-folder folder-02">
-      <span class="directory-number">NO. 02</span><span class="folder-stamp">BEACON<br>LOG</span><span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-number">NO. 02</span>
+      <span class="folder-stamp">BEACON<br>LOG</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
       <span class="directory-name"><a href="./02-解惑灯塔💡/">解惑灯塔</a><small>答疑与航海补给</small></span>
     </div>
     <div class="archive-folder folder-03">
-      <span class="directory-number">NO. 03</span><span class="folder-stamp">MILESTONE<br>03</span><span class="folder-watermark" aria-hidden="true"></span>
+      <span class="directory-number">NO. 03</span>
+      <span class="folder-stamp">MILESTONE<br>03</span>
+      <span class="folder-watermark" aria-hidden="true"></span>
       <span class="directory-name"><a href="./03-航海里程碑📓/">航海里程碑</a><small>日志、周报与甲板夜话</small></span>
     </div>
   </nav>
 
-  <footer class="knowledge-mark"><span>⚓</span><p>梁爽的第二大脑 · 持续更新中</p></footer>
+  <footer class="knowledge-mark">
+    <span>⚓</span>
+    <p>梁爽的第二大脑 · 持续更新中</p>
+  </footer>
 </main>
