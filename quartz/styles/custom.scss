@@ -1356,6 +1356,17 @@ body[data-slug="index"] .markdown-preview-view {
     padding: max(1.6rem, env(safe-area-inset-top)) 1rem max(0.9rem, env(safe-area-inset-bottom));
   }
 
+  .knowledge-home::before {
+    opacity: 0.62;
+    background-position: 92% 16%, 12% 76%, 0 0, 0 0;
+  }
+
+  .knowledge-home::after {
+    opacity: 0.66;
+    background-size: 4px 4px, 7rem 2.5rem, 4px 4px, 5.5rem 2rem;
+    background-position: 86% 11%, calc(86% + 2.8rem) calc(11% - 1rem), 18% 34%, calc(18% + 2.2rem) calc(34% - 0.8rem);
+  }
+
   .knowledge-welcome {
     padding-top: 1.8rem;
     padding-bottom: 0.85rem;
@@ -1378,7 +1389,7 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
   .knowledge-welcome h1 .brand-line {
-    font-size: clamp(1.95rem, 9.1vw, 2.75rem);
+    font-size: clamp(1.65rem, 7.2vw, 2.2rem);
     font-weight: 800;
     letter-spacing: 0.005em;
     filter:
@@ -1419,16 +1430,16 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
   .maritime-ornaments {
-    top: 0.15rem;
-    right: 0.15rem;
+    top: 0.05rem;
+    right: clamp(3.2rem, 16vw, 4.5rem);
     bottom: auto;
-    gap: 0.42rem;
-    opacity: 0.78;
+    gap: 0.28rem;
+    opacity: 0.92;
   }
 
   .ornament-compass {
-    width: 2rem;
-    height: 2rem;
+    width: 1.85rem;
+    height: 1.85rem;
   }
 
   .ornament-compass b {
@@ -1436,11 +1447,11 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
   .ornament-gear {
-    font-size: 1.45rem;
+    font-size: 1.25rem;
   }
 
   .ornament-anchor {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 }
 
@@ -1464,17 +1475,35 @@ body[data-slug="index"] .markdown-preview-view {
 }
 
 /* Layered parchment archive folders */
+.directory-guide {
+  position: absolute;
+  top: 0.15rem;
+  left: 50%;
+  z-index: 10;
+  width: max-content;
+  max-width: calc(100% - 1rem);
+  margin: 0;
+  padding: 0.3rem 0.65rem;
+  color: rgba(236, 211, 160, 0.78);
+  font: 500 0.78rem/1.4 "Songti SC", serif;
+  letter-spacing: 0.12em;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
 .knowledge-directory {
+  position: relative;
   display: flex !important;
   flex-direction: column;
   justify-content: center;
-  padding: 0.35rem 0 0.15rem;
+  padding: 2.45rem 0 0.15rem;
   overflow: visible;
 }
 
-.archive-folder {
+.knowledge-directory > .archive-folder {
   --folder-paper: #b89054;
   position: relative;
+  display: block;
   box-sizing: border-box;
   width: 100%;
   min-height: clamp(6.3rem, 15vh, 8.2rem);
@@ -1501,13 +1530,23 @@ body[data-slug="index"] .markdown-preview-view {
     0 9px 14px rgba(0, 0, 0, 0.5),
     inset 0 0 28px rgba(63, 35, 13, 0.2);
   transform-origin: 50% 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.knowledge-directory > .archive-folder:hover,
+.knowledge-directory > .archive-folder:focus-visible {
+  padding-left: clamp(1rem, 4vw, 3rem);
+  filter: brightness(1.08);
+  outline: 2px solid rgba(238, 209, 145, 0.85);
+  outline-offset: 2px;
 }
 
 .archive-folder:first-child {
   margin-top: 0;
 }
 
-.folder-00 { --folder-paper: #c3a46c; z-index: 1; transform: rotate(-0.25deg); }
+.folder-00 { --folder-paper: #c3a46c; z-index: 1; margin-top: 0; transform: rotate(-0.25deg); }
 .folder-01 { --folder-paper: #b89962; z-index: 2; transform: rotate(0.18deg); }
 .folder-02 { --folder-paper: #c2a066; z-index: 3; transform: rotate(-0.12deg); }
 .folder-03 { --folder-paper: #af8c58; z-index: 4; transform: rotate(0.2deg); }
@@ -1555,7 +1594,7 @@ body[data-slug="index"] .markdown-preview-view {
   text-align: right;
 }
 
-.archive-folder .directory-name a {
+.archive-folder .directory-name strong {
   display: inline-block;
   min-width: 7.5rem;
   min-height: 0;
@@ -1570,11 +1609,16 @@ body[data-slug="index"] .markdown-preview-view {
     0 1px rgba(255, 229, 171, 0.22);
 }
 
-.archive-folder .directory-name a:hover,
-.archive-folder .directory-name a:focus-visible {
-  padding-left: 0.1rem;
-  color: #6d271d !important;
-  border-color: #7d3025;
+.archive-folder .directory-name strong b {
+  display: inline-block;
+  margin-left: 0.28rem;
+  font-family: system-ui, sans-serif;
+}
+
+.archive-folder .directory-name em {
+  color: rgba(91, 47, 19, 0.78);
+  font: normal 600 0.7rem/1 system-ui, sans-serif;
+  letter-spacing: 0.04em;
 }
 
 .archive-folder .directory-name small {
@@ -1618,14 +1662,14 @@ body[data-slug="index"] .markdown-preview-view {
 @media (max-width: 700px) {
   .knowledge-directory {
     justify-content: flex-start;
-    padding-top: 0.35rem;
+    padding-top: 2.45rem;
   }
 
-  .archive-folder {
-    min-height: 0;
-    flex: 1 1 0;
-    margin-top: clamp(-1.65rem, -3vh, -1.05rem);
-    padding: 1.85rem 0.9rem 0.65rem;
+  .knowledge-directory > .archive-folder {
+    min-height: clamp(6rem, 14vh, 8.2rem);
+    flex: 0 0 clamp(6rem, 14vh, 8.2rem);
+    margin-top: clamp(-1rem, -1.8vh, -0.65rem);
+    padding: 1.65rem 0.9rem 0.7rem;
   }
 
   .archive-folder .directory-number {
@@ -1639,19 +1683,22 @@ body[data-slug="index"] .markdown-preview-view {
     display: block;
     padding-right: 0;
     padding-left: 4.25rem;
-    text-align: right;
+    text-align: left;
   }
 
-  .archive-folder .directory-name a {
+  .archive-folder .directory-name strong {
     min-width: 0;
-    font-size: clamp(1.25rem, 5.8vw, 1.55rem);
+    font-size: clamp(1.05rem, 4.9vw, 1.25rem);
     font-weight: 800;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
   }
 
   .archive-folder .directory-name small {
     display: block;
-    margin-top: 0.22rem;
-    font-size: 0.54rem;
+    margin-top: 0.25rem;
+    font-size: 0.58rem;
+    white-space: nowrap;
   }
 
   .folder-stamp {
@@ -1668,14 +1715,22 @@ body[data-slug="index"] .markdown-preview-view {
     right: 12%;
     bottom: -1.25rem;
   }
+
+  .folder-00 {
+    margin-top: 0;
+  }
 }
 
 @media (max-height: 650px) {
-  .archive-folder {
-    min-height: 0;
-    flex: 1 1 0;
-    margin-top: -1.25rem;
+  .knowledge-directory > .archive-folder {
+    min-height: clamp(5.3rem, 15vh, 6.2rem);
+    flex: 0 0 clamp(5.3rem, 15vh, 6.2rem);
+    margin-top: -0.55rem;
     padding-top: 1.45rem;
+  }
+
+  .folder-00 {
+    margin-top: 0;
   }
 
   .archive-folder .directory-name small {
