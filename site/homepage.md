@@ -41,13 +41,13 @@ description: "梁爽的第二大脑公开航海图"
       <span class="directory-number">NO. 02</span>
       <span class="folder-stamp">BEACON<br>LOG</span>
       <span class="folder-watermark" aria-hidden="true"></span>
-      <span class="directory-name"><strong>解惑灯塔 <b aria-hidden="true">›</b></strong><small>答疑与航海补给</small></span>
+      <span class="directory-name"><strong>解惑灯塔 <b aria-hidden="true">›</b></strong><small>答疑、补给与甲板夜话</small></span>
     </a>
     <a class="archive-folder folder-03" href="./03-航海里程碑📓/">
       <span class="directory-number">NO. 03</span>
       <span class="folder-stamp">MILESTONE<br>03</span>
       <span class="folder-watermark" aria-hidden="true"></span>
-      <span class="directory-name"><strong>航海里程碑 <b aria-hidden="true">›</b></strong><small>日志、周报与甲板夜话</small></span>
+      <span class="directory-name"><strong>航海里程碑 <b aria-hidden="true">›</b></strong><small>日志与航海周报</small></span>
     </a>
   </nav>
 
