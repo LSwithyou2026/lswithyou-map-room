@@ -11,14 +11,20 @@ description: "梁爽的第二大脑公开航海图"
       <span class="brand-line">LSwithyou*海图室</span>
     </h1>
     <div class="maritime-ornaments" aria-hidden="true">
-      <span class="ornament-compass"><i>N</i><b>✦</b></span>
-      <span class="ornament-gear">⚙</span>
-      <span class="ornament-anchor">⚓</span>
+      <span class="ornament-icon ornament-compass-svg">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11.5"/><path d="M16 2.5v27M2.5 16h27"/><path class="icon-fill" d="M16 7.5 19 16l-3 8.5L13 16Z"/><text x="16" y="3.5">N</text></svg>
+      </span>
+      <span class="ornament-icon ornament-gear-svg">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="5.5"/><circle cx="16" cy="16" r="10"/><path d="M16 2.5v5M16 24.5v5M2.5 16h5M24.5 16h5M6.5 6.5l3.6 3.6M21.9 21.9l3.6 3.6M25.5 6.5l-3.6 3.6M10.1 21.9l-3.6 3.6"/></svg>
+      </span>
+      <span class="ornament-icon ornament-anchor-svg">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="6" r="3"/><path d="M16 9v17M10 13h12M6 20c1.5 5 5 8 10 8s8.5-3 10-8M6 20l-2 4M26 20l2 4"/></svg>
+      </span>
     </div>
   </header>
 
   <nav class="knowledge-directory" aria-label="海图室目录">
-    <p class="directory-guide">选择一个入口，开始探索</p>
+    <p class="directory-guide">点开一份档案看看</p>
     <a class="archive-folder folder-00" href="./00-登舱指南🛋️/">
       <span class="directory-number">NO. 00</span>
       <span class="folder-stamp">LS<br>2026</span>
@@ -46,7 +52,7 @@ description: "梁爽的第二大脑公开航海图"
   </nav>
 
   <footer class="knowledge-mark">
-    <span>⚓</span>
+    <span class="footer-anchor" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="6" r="3"/><path d="M16 9v17M10 13h12M6 20c1.5 5 5 8 10 8s8.5-3 10-8M6 20l-2 4M26 20l2 4"/></svg></span>
     <p>梁爽的第二大脑 · 持续更新中</p>
   </footer>
 </main>

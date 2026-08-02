@@ -14,6 +14,72 @@
 html {
   scroll-behavior: smooth;
   background: var(--ink);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(220, 181, 98, 0.9) rgba(80, 61, 31, 0.34);
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgba(80, 61, 31, 0.34);
+}
+
+html::-webkit-scrollbar-thumb {
+  min-height: 3rem;
+  border: 1px solid rgba(246, 219, 157, 0.48);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #e0bd72, #8e682d);
+}
+
+/* Always-visible scroll rail, including mobile browsers that hide native scrollbars. */
+#quartz-root::before,
+#quartz-root::after {
+  content: "";
+  position: fixed;
+  right: max(3px, env(safe-area-inset-right));
+  z-index: 9999;
+  width: 4px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+#quartz-root::before {
+  top: max(14px, env(safe-area-inset-top));
+  bottom: max(14px, env(safe-area-inset-bottom));
+  border: 1px solid rgba(207, 169, 91, 0.22);
+  background: rgba(72, 54, 26, 0.3);
+  box-shadow: 0 0 8px rgba(216, 176, 92, 0.12);
+}
+
+#quartz-root::after {
+  top: max(16px, env(safe-area-inset-top));
+  height: 4.25rem;
+  background: linear-gradient(180deg, #efd28d, #987036);
+  box-shadow: 0 0 7px rgba(231, 194, 112, 0.5);
+  animation: page-scroll-indicator linear both;
+  animation-timeline: scroll(root block);
+}
+
+@keyframes page-scroll-indicator {
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(100vh - 6.5rem)); }
+}
+
+@media (max-width: 700px) {
+  html::-webkit-scrollbar { width: 6px; }
+  #quartz-root::before,
+  #quartz-root::after {
+    right: max(2px, env(safe-area-inset-right));
+    width: 3px;
+  }
+  #quartz-root::after { height: 3.25rem; }
+  @keyframes page-scroll-indicator {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(100dvh - 5.25rem)); }
+  }
 }
 
 body {
@@ -1289,6 +1355,37 @@ body[data-slug="index"] .markdown-preview-view {
   pointer-events: none;
 }
 
+.ornament-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  color: rgba(207, 164, 83, 0.76);
+}
+
+.ornament-icon svg,
+.footer-anchor svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ornament-icon .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.ornament-icon text {
+  fill: currentColor;
+  stroke: none;
+  font: 5px Georgia, serif;
+  text-anchor: middle;
+}
+
 .ornament-compass {
   position: relative;
   width: 2.7rem;
@@ -1351,20 +1448,53 @@ body[data-slug="index"] .markdown-preview-view {
 @media (max-width: 700px) {
   .knowledge-home {
     gap: 0;
-    height: 100vh;
-    height: 100dvh;
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: auto auto auto !important;
+    align-content: start;
     padding: max(1.6rem, env(safe-area-inset-top)) 1rem max(0.9rem, env(safe-area-inset-bottom));
+    overflow: hidden visible;
   }
 
   .knowledge-home::before {
-    opacity: 0.62;
-    background-position: 92% 16%, 12% 76%, 0 0, 0 0;
+    opacity: 0.76;
+    background:
+      radial-gradient(circle at 87% 20%, transparent 0 5.2rem, rgba(224, 181, 93, 0.24) 5.25rem 5.35rem, transparent 5.42rem 7rem, rgba(224, 181, 93, 0.15) 7.05rem 7.15rem, transparent 7.22rem),
+      radial-gradient(circle at 8% 68%, transparent 0 4.2rem, rgba(224, 181, 93, 0.17) 4.25rem 4.35rem, transparent 4.42rem 5.5rem, rgba(224, 181, 93, 0.09) 5.55rem 5.63rem, transparent 5.7rem),
+      repeating-linear-gradient(0deg, transparent 0 4.2rem, rgba(215, 169, 77, 0.075) 4.24rem, transparent 4.3rem),
+      repeating-linear-gradient(90deg, transparent 0 4.5rem, rgba(215, 169, 77, 0.06) 4.54rem, transparent 4.6rem);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.8) 78%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.8) 78%, transparent 100%);
   }
 
   .knowledge-home::after {
-    opacity: 0.66;
-    background-size: 4px 4px, 7rem 2.5rem, 4px 4px, 5.5rem 2rem;
-    background-position: 86% 11%, calc(86% + 2.8rem) calc(11% - 1rem), 18% 34%, calc(18% + 2.2rem) calc(34% - 0.8rem);
+    opacity: 0.72;
+    background-image:
+      radial-gradient(circle, rgba(255, 222, 145, 0.82) 0 1px, transparent 2px),
+      radial-gradient(circle, rgba(255, 222, 145, 0.55) 0 1px, transparent 2px),
+      linear-gradient(118deg, transparent 0 49.7%, rgba(218, 176, 88, 0.13) 50%, transparent 50.3%),
+      linear-gradient(62deg, transparent 0 49.7%, rgba(218, 176, 88, 0.08) 50%, transparent 50.3%);
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
+    background-size: 4.8rem 5.4rem, 6.2rem 7rem, 22rem 15rem, 18rem 12rem;
+    background-position: 1.1rem 1.8rem, 3.8rem 5.2rem, 95% 7%, -4rem 58%;
+  }
+
+  body[data-slug="index"],
+  body[data-slug="index"] #quartz-root,
+  body[data-slug="index"] .page,
+  body[data-slug="index"] #quartz-body,
+  body[data-slug="index"] .center,
+  body[data-slug="index"] article,
+  body[data-slug="index"] .markdown-preview-view {
+    height: auto;
+    min-height: 100svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+  }
+
+  body[data-slug="index"] .page > div > footer {
+    display: none;
   }
 
   .knowledge-welcome {
@@ -1431,10 +1561,15 @@ body[data-slug="index"] .markdown-preview-view {
 
   .maritime-ornaments {
     top: 0.05rem;
-    right: clamp(3.2rem, 16vw, 4.5rem);
+    right: 0.35rem;
     bottom: auto;
     gap: 0.28rem;
     opacity: 0.92;
+  }
+
+  .ornament-icon {
+    width: 1.62rem;
+    height: 1.62rem;
   }
 
   .ornament-compass {
@@ -1463,7 +1598,6 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
   .knowledge-eyebrow,
-  .knowledge-mark,
   .directory-name small {
     display: none;
   }
@@ -1486,7 +1620,7 @@ body[data-slug="index"] .markdown-preview-view {
   padding: 0.3rem 0.65rem;
   color: rgba(236, 211, 160, 0.78);
   font: 500 0.78rem/1.4 "Songti SC", serif;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-align: center;
   transform: translateX(-50%);
 }
@@ -1527,7 +1661,7 @@ body[data-slug="index"] .markdown-preview-view {
   border: 1px solid rgba(80, 47, 18, 0.7);
   box-shadow:
     0 -1px 0 rgba(255, 231, 176, 0.18),
-    0 9px 14px rgba(0, 0, 0, 0.5),
+    0 13px 20px rgba(0, 0, 0, 0.62),
     inset 0 0 28px rgba(63, 35, 13, 0.2);
   transform-origin: 50% 100%;
   text-decoration: none;
@@ -1546,10 +1680,10 @@ body[data-slug="index"] .markdown-preview-view {
   margin-top: 0;
 }
 
-.folder-00 { --folder-paper: #c3a46c; z-index: 1; margin-top: 0; transform: rotate(-0.25deg); }
-.folder-01 { --folder-paper: #b89962; z-index: 2; transform: rotate(0.18deg); }
-.folder-02 { --folder-paper: #c2a066; z-index: 3; transform: rotate(-0.12deg); }
-.folder-03 { --folder-paper: #af8c58; z-index: 4; transform: rotate(0.2deg); }
+.knowledge-directory > .folder-00 { --folder-paper: #ccad76; z-index: 1; margin-top: 0; transform: translateX(-5px) rotate(-0.68deg); }
+.knowledge-directory > .folder-01 { --folder-paper: #b88d55; z-index: 2; transform: translateX(6px) rotate(0.58deg); }
+.knowledge-directory > .folder-02 { --folder-paper: #c6a369; z-index: 3; transform: translateX(-4px) rotate(-0.5deg); }
+.knowledge-directory > .folder-03 { --folder-paper: #a97b48; z-index: 4; transform: translateX(5px) rotate(0.7deg); }
 .folder-04 { --folder-paper: #c09b62; z-index: 5; transform: rotate(-0.08deg); }
 
 .archive-folder::before {
@@ -1657,75 +1791,121 @@ body[data-slug="index"] .markdown-preview-view {
   border-radius: 50%;
   transform: rotate(-8deg);
   box-shadow: 0 0 0 5px rgba(39, 82, 80, 0.035);
+  opacity: 0.55;
 }
+
+.folder-00 .folder-watermark { right: 4%; bottom: -0.2rem; width: 6.4rem; transform: rotate(-14deg); }
+.folder-01 .folder-watermark { right: auto; left: 48%; bottom: -0.85rem; width: 5.1rem; height: 3.8rem; transform: rotate(11deg); }
+.folder-02 .folder-watermark { top: 34%; right: 20%; bottom: auto; width: 6.8rem; height: 2.8rem; transform: rotate(-5deg); }
+.folder-03 .folder-watermark { right: 2%; bottom: 0.15rem; width: 5.5rem; height: 4rem; transform: rotate(16deg); }
 
 @media (max-width: 700px) {
   .knowledge-directory {
     justify-content: flex-start;
     padding-top: 2.45rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .directory-guide {
+    right: 4.25rem;
+    left: auto;
+    max-width: calc(100% - 2.3rem);
+    padding-right: 0;
+    text-align: right;
+    transform: none;
+    white-space: nowrap;
   }
 
   .knowledge-directory > .archive-folder {
-    min-height: clamp(6rem, 14vh, 8.2rem);
-    flex: 0 0 clamp(6rem, 14vh, 8.2rem);
-    margin-top: clamp(-1rem, -1.8vh, -0.65rem);
+    min-height: clamp(6.4rem, 18.5svh, 10.2rem);
+    flex: 0 0 clamp(6.4rem, 18.5svh, 10.2rem);
+    margin-top: clamp(-1.5rem, -2.5svh, -0.9rem);
     padding: 1.65rem 0.9rem 0.7rem;
   }
 
   .archive-folder .directory-number {
-    top: 0.68rem;
-    left: 0.9rem;
-    font-size: 0.6rem;
-    font-weight: 700;
+    top: calc(50% - 2.55rem);
+    left: 0.55rem;
+    width: 4.5rem;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-align: center;
   }
 
   .archive-folder .directory-name {
     display: block;
-    padding-right: 0;
-    padding-left: 4.25rem;
-    text-align: left;
+    padding: 0 3.4rem;
+    text-align: center;
+    transform: translateY(1.45rem);
   }
 
   .archive-folder .directory-name strong {
     min-width: 0;
-    font-size: clamp(1.05rem, 4.9vw, 1.25rem);
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    font-size: clamp(1.42rem, 6.4vw, 1.76rem);
+    font-weight: 900;
+    letter-spacing: 0.1em;
     white-space: nowrap;
   }
 
   .archive-folder .directory-name small {
     display: block;
-    margin-top: 0.25rem;
-    font-size: 0.58rem;
+    margin-top: 0.38rem;
+    font-size: 0.62rem;
+    font-weight: 600;
     white-space: nowrap;
   }
 
   .folder-stamp {
-    top: 1.25rem;
-    right: auto;
-    left: 0.8rem;
-    width: 3.35rem;
-    height: 3.35rem;
-    font-size: 0.49rem;
+    top: 50%;
+    width: 3.85rem;
+    height: 3.85rem;
+    font-size: 0.56rem;
     border-width: 3px;
   }
 
+  .folder-00 .directory-number { left: 0.35rem; }
+  .folder-01 .directory-number { left: 0.9rem; }
+  .folder-02 .directory-number { left: 0.2rem; }
+  .folder-03 .directory-number { left: 1.05rem; }
+
+  .folder-00 .folder-stamp { left: 0.65rem; transform: translateY(-42%) rotate(-13deg); }
+  .folder-01 .folder-stamp { left: 1.25rem; transform: translateY(-38%) rotate(8deg); }
+  .folder-02 .folder-stamp { left: 0.45rem; transform: translateY(-45%) rotate(-5deg); }
+  .folder-03 .folder-stamp { left: 1.55rem; transform: translateY(-40%) rotate(14deg); }
+
   .folder-watermark {
-    right: 12%;
     bottom: -1.25rem;
   }
 
   .folder-00 {
     margin-top: 0;
   }
+
+  .knowledge-mark {
+    grid-row: 3 !important;
+    align-self: start;
+    width: auto;
+    margin: 3.35rem 0 0;
+    padding-top: 0.7rem !important;
+    border-top: 1px solid rgba(199, 158, 78, 0.22);
+  }
+
+  .knowledge-mark p {
+    font-size: 0.58rem;
+  }
+
+  .footer-anchor {
+    width: 1rem;
+    height: 1rem;
+    color: rgba(195, 151, 71, 0.58);
+  }
 }
 
 @media (max-height: 650px) {
   .knowledge-directory > .archive-folder {
-    min-height: clamp(5.3rem, 15vh, 6.2rem);
-    flex: 0 0 clamp(5.3rem, 15vh, 6.2rem);
-    margin-top: -0.55rem;
+    min-height: clamp(5.8rem, 17.5svh, 7rem);
+    flex: 0 0 clamp(5.8rem, 17.5svh, 7rem);
+    margin-top: -0.9rem;
     padding-top: 1.45rem;
   }
 
