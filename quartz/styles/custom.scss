@@ -1799,6 +1799,105 @@ body[data-slug="index"] .markdown-preview-view {
 .folder-02 .folder-watermark { top: 34%; right: 20%; bottom: auto; width: 6.8rem; height: 2.8rem; transform: rotate(-5deg); }
 .folder-03 .folder-watermark { right: 2%; bottom: 0.15rem; width: 5.5rem; height: 4rem; transform: rotate(16deg); }
 
+@media (min-width: 701px) {
+  .knowledge-home {
+    gap: clamp(0.7rem, 1.7vh, 1.25rem);
+    padding-top: clamp(1.7rem, 4vh, 3rem);
+    padding-bottom: clamp(1rem, 2.2vh, 1.6rem);
+  }
+
+  .knowledge-home::before {
+    opacity: 0.72;
+    background:
+      radial-gradient(circle at 84% 24%, transparent 0 8.5rem, rgba(224, 181, 93, 0.24) 8.58rem 8.72rem, transparent 8.8rem 11rem, rgba(224, 181, 93, 0.13) 11.08rem 11.2rem, transparent 11.3rem),
+      radial-gradient(circle at 15% 78%, transparent 0 6.2rem, rgba(224, 181, 93, 0.18) 6.28rem 6.42rem, transparent 6.5rem 8.2rem, rgba(224, 181, 93, 0.09) 8.28rem 8.4rem, transparent 8.5rem),
+      repeating-linear-gradient(0deg, transparent 0 4rem, rgba(215, 169, 77, 0.075) 4.05rem, transparent 4.12rem),
+      repeating-linear-gradient(90deg, transparent 0 5rem, rgba(215, 169, 77, 0.06) 5.05rem, transparent 5.12rem);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.92) 80%, rgba(0, 0, 0, 0.65) 100%);
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.92) 80%, rgba(0, 0, 0, 0.65) 100%);
+  }
+
+  .knowledge-home::after {
+    opacity: 0.82;
+    background-image:
+      radial-gradient(circle, rgba(255, 222, 145, 0.82) 0 1.2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 222, 145, 0.48) 0 1px, transparent 2px),
+      linear-gradient(135deg, transparent 0 42%, rgba(218, 176, 88, 0.34) 49%, rgba(218, 176, 88, 0.08) 57%, transparent 65%);
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: 9rem 7rem, 13rem 10rem, 10rem 3.2rem;
+    background-position: 1.8rem 1.2rem, 5.2rem 4.8rem, 91% 14%;
+  }
+
+  .knowledge-directory {
+    justify-content: flex-start;
+    padding-top: 3.45rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .directory-guide {
+    top: 0.65rem;
+    left: 54%;
+    padding: 0.2rem 0.9rem;
+    color: rgba(246, 221, 169, 0.9);
+    background: rgba(7, 8, 8, 0.5);
+    border: 1px solid rgba(211, 170, 86, 0.2);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .knowledge-directory > .archive-folder {
+    min-height: clamp(8rem, 15.5vh, 10.4rem);
+    flex: 1 1 clamp(8rem, 15.5vh, 10.4rem);
+    margin-top: clamp(-1.7rem, -2.4vh, -1.15rem);
+    padding-top: clamp(2.2rem, 4.5vh, 3.1rem);
+  }
+
+  .knowledge-directory > .folder-00 { transform: translateX(-12px) rotate(-0.8deg); }
+  .knowledge-directory > .folder-01 { transform: translateX(14px) rotate(0.68deg); }
+  .knowledge-directory > .folder-02 { transform: translateX(-9px) rotate(-0.58deg); }
+  .knowledge-directory > .folder-03 { transform: translateX(11px) rotate(0.82deg); }
+
+  .archive-folder .directory-number {
+    top: calc(50% - 2.65rem);
+    width: 5rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .folder-stamp {
+    top: 50%;
+    width: 4.1rem;
+    height: 4.1rem;
+    font-size: 0.55rem;
+    border-width: 3px;
+  }
+
+  .folder-00 .directory-number { left: 12%; }
+  .folder-01 .directory-number { left: 18%; }
+  .folder-02 .directory-number { left: 10%; }
+  .folder-03 .directory-number { left: 20%; }
+
+  .folder-00 .folder-stamp { left: calc(12% + 0.45rem); transform: translateY(-43%) rotate(-13deg); }
+  .folder-01 .folder-stamp { left: calc(18% + 0.45rem); transform: translateY(-38%) rotate(9deg); }
+  .folder-02 .folder-stamp { left: calc(10% + 0.45rem); transform: translateY(-46%) rotate(-6deg); }
+  .folder-03 .folder-stamp { left: calc(20% + 0.45rem); transform: translateY(-40%) rotate(14deg); }
+
+  .knowledge-mark {
+    align-self: end;
+    margin-top: 0.1rem;
+    padding-top: 0.65rem !important;
+    border-top: 1px solid rgba(199, 158, 78, 0.25);
+  }
+
+  .footer-anchor {
+    flex: 0 0 1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    color: rgba(195, 151, 71, 0.64);
+  }
+}
+
 @media (max-width: 700px) {
   .knowledge-directory {
     justify-content: flex-start;
