@@ -173,6 +173,108 @@ footer {
   color: var(--parchment-muted);
 }
 
+/* Folder pages are navigation, not articles: keep one title and show a compact file tree. */
+body:has(.page-listing) .breadcrumb-container,
+body:has(.page-listing) .content-meta,
+body:has(.page-listing) .page-listing > p,
+body:has(.page-listing) article {
+  display: none;
+}
+
+body:has(.page-listing) .page-header { margin-bottom: 1.25rem; }
+
+body:has(.page-listing) .article-title {
+  margin: 0;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.2;
+}
+
+body:has(.page-listing) .article-title::after {
+  width: 3.5rem;
+  margin-top: 0.45rem;
+}
+
+body:has(.page-listing) .page-listing {
+  position: relative;
+  margin: 0;
+  padding: 1.15rem 1.1rem 1.1rem 1.7rem;
+  border: 1px solid var(--line-gold);
+  background: linear-gradient(145deg, rgba(198, 161, 91, 0.08), rgba(11, 10, 8, 0.68));
+}
+
+body:has(.page-listing) .page-listing::before {
+  content: "文件目录";
+  position: absolute;
+  top: -0.62rem;
+  left: 0.85rem;
+  padding: 0 0.45rem;
+  color: var(--antique-gold);
+  background: var(--ink);
+  font: 600 0.68rem/1.2 Georgia, "Songti SC", serif;
+  letter-spacing: 0.16em;
+}
+
+body:has(.page-listing) .section-ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body:has(.page-listing) .section-ul::before {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  left: 0.28rem;
+  border-left: 1px solid var(--line-gold);
+}
+
+body:has(.page-listing) .section-li { position: relative; margin: 0; padding: 0; }
+
+body:has(.page-listing) .section-li::before {
+  content: "├";
+  position: absolute;
+  top: 0.58rem;
+  left: -1.13rem;
+  color: var(--deep-gold);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body:has(.page-listing) .section-li:last-child::before { content: "└"; }
+body:has(.page-listing) .section-li > .section { display: block; }
+body:has(.page-listing) .section-li .meta,
+body:has(.page-listing) .section-li .tags { display: none; }
+body:has(.page-listing) .section-li .desc h3 { margin: 0; }
+
+body:has(.page-listing) .section-li .desc a {
+  display: block;
+  padding: 0.5rem 0.6rem;
+  color: var(--parchment) !important;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+body:has(.page-listing) .section-li .desc a::before {
+  content: "▸";
+  margin-right: 0.55rem;
+  color: var(--antique-gold);
+}
+
+body:has(.page-listing) .section-li .desc a:hover {
+  color: var(--antique-gold) !important;
+  background: rgba(198, 161, 91, 0.1);
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  body:has(.page-listing) .page-header { margin-bottom: 1rem; }
+  body:has(.page-listing) .page-listing { padding: 1rem 0.7rem 0.85rem 1.5rem; }
+  body:has(.page-listing) .section-li .desc a { padding: 0.58rem 0.45rem; font-size: 0.98rem; }
+}
+
 body[data-slug="index"] #quartz-body {
   display: block;
 }
